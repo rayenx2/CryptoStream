@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#060b14"/>
+      <stop offset="50%"  stop-color="#0d1a2e"/>
+      <stop offset="100%" stop-color="#060e1a"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#f59e0b"/>
+      <stop offset="50%"  stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="glowLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#f59e0b" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#f59e0b" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.02"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#bg)"/>
+
+  <!-- Ambient glow -->
+  <ellipse cx="160" cy="200" rx="300" ry="200" fill="url(#glowLeft)"/>
+
+  <!-- Grid lines -->
+  <g stroke="#1e3a5f" stroke-width="0.5" opacity="0.35">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="300" y1="0" x2="300" y2="400"/>
+    <line x1="600" y1="0" x2="600" y2="400"/>
+    <line x1="900" y1="0" x2="900" y2="400"/>
+  </g>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#accentLine)"/>
+
+  <!-- BTC price chart (area) - right side decoration -->
+  <polygon
+    points="580,330 630,295 680,310 730,265 780,275 830,235 880,248 930,212 980,228 1030,192 1080,178 1130,162 1180,170 1200,158 1200,380 580,380"
+    fill="url(#chartGrad)" opacity="0.55"/>
+  <polyline
+    points="580,330 630,295 680,310 730,265 780,275 830,235 880,248 930,212 980,228 1030,192 1080,178 1130,162 1180,170 1200,158"
+    fill="none" stroke="#f59e0b" stroke-width="2.5" filter="url(#glow)" opacity="0.85"/>
+  <circle cx="1030" cy="192" r="4" fill="#f59e0b" filter="url(#glow)"/>
+  <circle cx="1130" cy="162" r="4" fill="#f59e0b" filter="url(#glow)"/>
+  <circle cx="1200" cy="158" r="6" fill="#fb923c" filter="url(#softglow)"/>
+
+  <!-- BTC label on chart -->
+  <rect x="1025" y="168" width="38" height="16" rx="4" fill="#1a0c00" stroke="#f59e0b" stroke-width="0.8" opacity="0.9"/>
+  <text x="1044" y="180" font-family="'Segoe UI',sans-serif" font-size="9" fill="#f59e0b" text-anchor="middle" font-weight="700">BTC</text>
+
+  <!-- Logo bars icon -->
+  <g transform="translate(56, 148)">
+    <rect x="0"  y="52" width="13" height="26" rx="3" fill="#f59e0b" opacity="0.55"/>
+    <rect x="19" y="36" width="13" height="42" rx="3" fill="#f59e0b" opacity="0.72"/>
+    <rect x="38" y="18" width="13" height="60" rx="3" fill="#f59e0b" opacity="0.88"/>
+    <rect x="57" y="30" width="13" height="48" rx="3" fill="#fb923c" opacity="0.85"/>
+    <rect x="76" y="8"  width="13" height="70" rx="3" fill="#f59e0b" filter="url(#glow)"/>
+    <!-- trend line -->
+    <polyline points="6,64 25,44 44,24 63,36 82,14" fill="none" stroke="#fde68a" stroke-width="2" opacity="0.65"/>
+  </g>
+
+  <!-- TITLE -->
+  <text x="172" y="198" font-family="'Segoe UI',system-ui,sans-serif" font-size="72" font-weight="800" letter-spacing="-2" fill="#f1f5f9">Crypto</text>
+  <text x="497" y="198" font-family="'Segoe UI',system-ui,sans-serif" font-size="72" font-weight="800" letter-spacing="-2" fill="#f59e0b" filter="url(#glow)">Stream</text>
+
+  <!-- Tagline -->
+  <text x="172" y="236" font-family="'Segoe UI',system-ui,sans-serif" font-size="17" fill="#64748b" letter-spacing="0.3">Real-time crypto market pipeline · Kafka → Spark → Cassandra · sub-500ms latency</text>
+
+  <!-- Tech badges -->
+  <g transform="translate(172, 266)">
+    <rect x="0"   y="0" width="82"  height="26" rx="13" fill="#0d0b0a" stroke="#3d3a38" stroke-width="1"/>
+    <text x="41"  y="17" font-family="'Segoe UI',sans-serif" font-size="11" fill="#e2e8f0" text-anchor="middle" font-weight="600">Kafka 7.4.0</text>
+
+    <rect x="90"  y="0" width="82"  height="26" rx="13" fill="#1a0800" stroke="#E25A1C" stroke-width="1"/>
+    <text x="131" y="17" font-family="'Segoe UI',sans-serif" font-size="11" fill="#E25A1C" text-anchor="middle" font-weight="600">Spark 3.5.0</text>
+
+    <rect x="180" y="0" width="90"  height="26" rx="13" fill="#00183a" stroke="#017CEE" stroke-width="1"/>
+    <text x="225" y="17" font-family="'Segoe UI',sans-serif" font-size="11" fill="#017CEE" text-anchor="middle" font-weight="600">Airflow 2.6.0</text>
+
+    <rect x="278" y="0" width="90"  height="26" rx="13" fill="#001a24" stroke="#1287B1" stroke-width="1"/>
+    <text x="323" y="17" font-family="'Segoe UI',sans-serif" font-size="11" fill="#1287B1" text-anchor="middle" font-weight="600">Cassandra</text>
+
+    <rect x="376" y="0" width="76"  height="26" rx="13" fill="#1a0c00" stroke="#F46800" stroke-width="1"/>
+    <text x="414" y="17" font-family="'Segoe UI',sans-serif" font-size="11" fill="#F46800" text-anchor="middle" font-weight="600">Grafana</text>
+
+    <rect x="460" y="0" width="74"  height="26" rx="13" fill="#001520" stroke="#61DAFB" stroke-width="1"/>
+    <text x="497" y="17" font-family="'Segoe UI',sans-serif" font-size="11" fill="#61DAFB" text-anchor="middle" font-weight="600">React 18</text>
+
+    <rect x="542" y="0" width="82"  height="26" rx="13" fill="#0d1a00" stroke="#009688" stroke-width="1"/>
+    <text x="583" y="17" font-family="'Segoe UI',sans-serif" font-size="11" fill="#009688" text-anchor="middle" font-weight="600">FastAPI</text>
+  </g>
+
+  <!-- KPI metrics bottom -->
+  <g transform="translate(172, 334)">
+    <text x="0"   y="0"  font-family="'Segoe UI',sans-serif" font-size="24" font-weight="800" fill="#f59e0b">11</text>
+    <text x="0"   y="18" font-family="'Segoe UI',sans-serif" font-size="10" fill="#475569" letter-spacing="0.5">COINS TRACKED</text>
+
+    <text x="74"  y="0"  font-family="'Segoe UI',sans-serif" font-size="24" font-weight="800" fill="#34d399">&#60;500ms</text>
+    <text x="74"  y="18" font-family="'Segoe UI',sans-serif" font-size="10" fill="#475569" letter-spacing="0.5">E2E LATENCY</text>
+
+    <text x="206" y="0"  font-family="'Segoe UI',sans-serif" font-size="24" font-weight="800" fill="#60a5fa">12</text>
+    <text x="206" y="18" font-family="'Segoe UI',sans-serif" font-size="10" fill="#475569" letter-spacing="0.5">DOCKER SERVICES</text>
+
+    <text x="284" y="0"  font-family="'Segoe UI',sans-serif" font-size="24" font-weight="800" fill="#a78bfa">@hourly</text>
+    <text x="284" y="18" font-family="'Segoe UI',sans-serif" font-size="10" fill="#475569" letter-spacing="0.5">AIRFLOW SCHEDULE</text>
+
+    <text x="410" y="0"  font-family="'Segoe UI',sans-serif" font-size="24" font-weight="800" fill="#fb923c">CoinGecko</text>
+    <text x="410" y="18" font-family="'Segoe UI',sans-serif" font-size="10" fill="#475569" letter-spacing="0.5">LIVE DATA SOURCE</text>
+  </g>
+
+  <!-- Author -->
+  <text x="1178" y="392" font-family="'Segoe UI',sans-serif" font-size="11" fill="#334155" text-anchor="end">github.com/rayenx2 · Rayen Lassoued</text>
+</svg>

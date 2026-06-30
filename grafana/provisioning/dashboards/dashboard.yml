@@ -1,0 +1,12 @@
+apiVersion: 1
+
+providers:
+  - name: CryptoStream
+    orgId: 1
+    folder: CryptoStream
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards
